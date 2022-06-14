@@ -1,20 +1,22 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import CreatedTimers from './CreatedTimers';
-import { Page, Card, Layout, Button, EmptyState} from "@shopify/polaris";
+import { Page, Card, Layout, Button, EmptyState } from "@shopify/polaris";
 
 export default function Home() {
-
     const [page, setPage] = useState('empty')
+    if (page !== 'empty') return <CreatedTimers setPage={setPage} />
 
-    if (page !== 'empty') return <CreatedTimers setPage={setPage}/>
+    const primaryActionButton = (
+        <Button primary onClick={() => setPage('timer')}>
+            Create a new timer
+        </Button>
+    )
 
     return (
-        <Page 
+        <Page
             title='Add your own countdown clock!'
-            primaryAction={
-                    <Button primary onClick={() => setPage('timer')}>Create a new timer</Button>
-                }
-            >
+            primaryAction={primaryActionButton}
+        >
             <Layout sectioned>
                 <Card sectioned>
                     <EmptyState
