@@ -10,11 +10,11 @@ export default function CreatedTimers({ setPage }) {
 
   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS
 
+  const secondaryButton = <Button secondary onClick={() => setPage('empty')}>Back</Button>
+
   return (
     <Page title='Your clocks is here!'
-      primaryAction={
-        <Button secondary onClick={() => setPage('empty')}>Back</Button>
-      }
+      primaryAction={secondaryButton}
     >
       <Layout>
         <Timer targetDate={dateTimeAfterThreeDays} />
