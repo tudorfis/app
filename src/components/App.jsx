@@ -14,7 +14,7 @@ import { AppProvider as PolarisProvider } from "@shopify/polaris";
 import translations from "@shopify/polaris/locales/en.json";
 import "@shopify/polaris/build/esm/styles.css";
 import  Home from "./countdown/Home";
-import '/src/css/index.css'
+import '/src/css/counter.css'
 
 export default function App() {
     console.clear()
