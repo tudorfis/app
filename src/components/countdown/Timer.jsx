@@ -3,7 +3,7 @@ import { Card } from '@shopify/polaris'
 import { useCountdown } from '/src/hooks/countdown'
 import DateTimeDisplay from './DateTimeDisplay'
 
-const ShowCounter = ({ days, hours, minutes, seconds }) => {
+const ShowCounter = ({days, hours, minutes, seconds }) => {
     return (
         <div className='counter'>
             <DateTimeDisplay value={days} type={'Days'} />
@@ -17,11 +17,11 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
     )
 }
 
-export default function Timer({ targetDate }) {
+export default function Timer({ name, targetDate }) {
     const [days, hours, minutes, seconds] = useCountdown(targetDate)
 
     return (
-        <Card sectioned title='Timer' wrap>
+        <Card sectioned title={name} wrap>
             <ShowCounter
                 days={days}
                 hours={hours}
